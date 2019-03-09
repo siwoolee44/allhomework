@@ -1,0 +1,45 @@
+Sub easy()
+
+
+    Dim Col As Double
+
+    Dim TotalVol As Double
+
+
+    Cells(1, 9).Value = "Ticker"
+
+    Cells(1, 10).Value = "Total Stock Volume"
+
+
+    Col = 2
+
+    Cells(Col, 9).Value = Cells(Col, 1).Value
+
+    LastRow = Cells(Rows.Count, 1).End(xlUp).Row
+
+        
+        For Row = 2 To LastRow
+
+        If Cells(Row, 1).Value = Cells(Col, 9) Then
+
+        TotalVol = TotalVol + Cells(Row, 7).Value
+
+        Else
+
+        Cells(Col, 10).Value = TotalVol
+
+        TotalVol = Cells(Row, 7).Value
+
+        Col = Col + 1
+
+        Cells(Col, 9).Value = Cells(Row, 1).Value
+
+        End If
+
+Next Row
+
+Cells(Col, 10).Value = TotalVol
+
+
+End Sub
+
