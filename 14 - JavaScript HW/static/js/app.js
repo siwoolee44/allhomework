@@ -21,13 +21,13 @@ function DisplayTableRowsLooped(someData){
 tableData.forEach(DisplayTableRowsLooped);
 
 
-// Select the submit button
+// Select the filter button
 var submit = d3.select("#filter-btn");
 
 // initialize form input global variable
 // var forminput = "";
 
-//filter function for blood type according to forminput
+//filter function for datetime according to forminput
 function filterdateTime(ldata) {
   return ldata.datetime === forminput;
 }
