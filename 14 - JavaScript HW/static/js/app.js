@@ -49,7 +49,7 @@ submit.on("click", function() {
   //filter according to datetime - used filter datetime function
   tableData.filter(filterdateTime);
 
-  var filteredData = tableData.filter(person => person.datetime === inputValue);
+  var filteredData = tableData.filter(dt => dt.datetime === inputValue);
 
   tbody.text("");
   filteredData.forEach(DisplayTableRowsLooped);
